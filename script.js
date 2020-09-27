@@ -10,4 +10,12 @@
 // WHEN the game is over
 // THEN I can save my initials and score
 
-console.log("hello world");
+//
+
+var challengeContainer = document.getElementById("challenge");
+var startButton = document.getElementById("start-quiz");
+
+
+startButton.addEventListener("click", function() {
+    challengeContainer.style.display = "none";
+});
