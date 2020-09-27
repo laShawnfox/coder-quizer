@@ -10,67 +10,95 @@
 // WHEN the game is over
 // THEN I can save my initials and score
 
-//
-
-var challengeContainer = document.getElementById("challenge");
-var startButton = document.getElementById("start-quiz");
-var answerOptions = document.getElementById("answer-options");
-
 //quiz statements
-var statements = [
+var questionsArr = [
     {
-        Statement: "Arrays in Javascript can be used to store ____."
+        question: "Arrays in Javascript can be used to store ____.",
 
-        answerOptions: "1. numbers and strings", "2. other arrays", "3. boolean", "4. all of the above"
-
+        optionA: "1. numbers and strings",
+        optionB: "2. other arrays", 
+        optionC: "3. boolean", 
+        optionD: "4. all of the above",
+        correct : "4"
     }, 
     {
-        Statement: "Commonly used data types DO NOT include:"
+        question: "Commonly used data types DO NOT include:",
 
-        answerOptions: "1. strings", "2. booleans", "3. alerts", "4. numbers"
-   
-    }
+        optionA: "1. strings", 
+        optionB:"2. booleans",
+        optionC: "3. alerts", 
+        optionD:"4. numbers",
+        correct : "3"
+    },
     {
-        Statement: "A very useful tool used during development and debugging for printing content to the debugger is:"
+        question: "A very useful tool used during development and debugging for printing content to the debugger is:",
 
-        answerOptions: "1. JavaScript", "2. terminal / bash", "3. for loops", "4. console.log"   
-    }
-    {
-        Statement: "String values must be enclosed within _____ when being assigned to variables."
+        optionA: "1. JavaScript",
+        optionB: "2. terminal / bash", 
+        optionC: "3. for loops", 
+        optionD:"4. console.log",  
+        correct :  "4"
+    },
+    
+    {   question: "String values must be enclosed within _____ when being assigned to variables.",
 
-        answerOptions: "1. commas", "2. curly brackets", "3. quotas", "4. parentheses"
-   
-    }
-]
- //     //
-    //     Statement: "Arrays in Javascript can be used to store ____."
+        optionA: "1. commas", 
+        optionB:"2. curly brackets", 
+        optionC:"3. quotas", 
+        optionD:"4. parentheses",
+        correct : "3"
+    },
+];
 
-    //     optionA: ""
+//target elements
+var challengeContainer = document.getElementById("challenge");
+var startButton = document.getElementById("start-quiz");
+var quizQuestions = document.getElementById("quiz-questions");
+var quizOptions = document.getElementById("quiz-options");
+var timerEl = document.getElementById("countdown");
 
-    //     optionB: ""
+//timer
+//timer needs to be decrements count --
+ var score = 75;
+ var timeleft = 0;
 
-    //     optionC: ""
+// function incorrect() {
+//     timeLeft -= 10; 
+//     next();
+// }
 
-    //     optionD: ""
-    // },
 
-function renderAnswerOptions() {
-    var availableAnswers = ["strings", "booleans", "alerts", "numbers"];
+//once user hits start
+//goes through loop of questions
+function questionsArr() {
+   for (var i = 0; i < questionsArr.length; i++){
 
-    for (var i = 0; i <availableAnswers.length; i++){
         //1. Create an element.
         var button = document.createElement("button");
         //2.add content
-        button.textContent = availableAnswers[i];
-        button.setAttribute("data-value", availableAnswers[i]);
+        button.textContent = availableQuestions[i];
+        button.setAttribute("data-value", availableQuestions[i]);
         //3. Append to an existing elememt.
-        quizOptions.append(button);
+        quizQuestions.append(button);
 
     }
 }
+//user chooses from options
+//if answer is incorrect display wrong 
+//if answer is correct display correct
+//move to new questions once correct/wrong is displayed
+quizQuestions.addEventListener("click", function(event){  
+    if (event.target.matches("button")){
+     console.log("wrong answer");
+ 
+}
+  });
 
-
+//once user clicks start
+// the intro disappears
 startButton.addEventListener("click", function() {
     challengeContainer.style.display = "none";
-    renderAnswerOptions();
+    renderQuizQuestions();
+    // var optionsToDisplay = statements[currentStatement].options;
+    // renderAnswerOptions(optionsToDisplay);
 });
