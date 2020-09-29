@@ -77,6 +77,47 @@ function renderResults()
     $(resultsContainer).removeClass('d-none');
 }
 
+//does document.ready go here or at beginning?
+$(document).ready(function() {
+
+    //once user clicks start
+    // the intro disappears
+    startButton.addEventListener("click", function() {
+        $(challengeContainer).addClass('d-none');
+        $(quizContainer).removeClass('d-none');
+        initTimer();
+        renderQuestion();
+    });
+
+    //make sure within scope from the error ..go back over jquery
+    $("#q_options button").click(function(e){
+
+        var show_me = "Correct!";
+
+        if ( questionsArr[q_index]["correct"] != $(e.target).val() ) 
+        {
+            time_left = (time_left - 10);
+            show_me = "Wrong!";
+        } 
+
+        $(anwserEl).show().text(show_me).fadeOut(2000);
+
+        q_index++;
+        renderQuestion();
+    });
+
+    $("#reset").click(function(e) {
+        time_left = 75;
+        q_index = 0;
+
+        $(quizContainer).removeClass('d-none');
+        $(resultsContainer).addClass('d-none');
+        initTimer();
+        renderQuestion();
+
+    });
+
+});
 
 // WHEN I click the start button
 // the intro disappears
