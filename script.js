@@ -37,6 +37,14 @@ var option_d = $("#option_d");
  // index of current question
  var q_index = 0;
 
+ //must stop timer...should this go here or after the initTimer?
+  
+function wrapUp()
+{
+     clearInterval(count_down);
+     renderResults();
+ }
+
  function initTimer()
  {
      count_down = window.setInterval(function(){
@@ -49,7 +57,20 @@ var option_d = $("#option_d");
      }, 1000);
  
  }
- 
+//renderQuestions for button options
+function renderQuestion()
+{
+    if (q_index >= questionsArr.length) {
+        return wrapUp();
+    }
+
+    q_text.text(questionsArr[q_index].question);
+    option_a.text(questionsArr[q_index]["options"]["optionA"]);
+    option_b.text(questionsArr[q_index]["options"]["optionB"]);
+    option_c.text(questionsArr[q_index]["options"]["optionC"]);
+    option_d.text(questionsArr[q_index]["options"]["optionD"]);
+}
+
 // WHEN I click the start button
 // the intro disappears
 startButton.addEventListener("click", function() {
