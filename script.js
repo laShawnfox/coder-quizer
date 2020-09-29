@@ -57,48 +57,15 @@ var quizQuestions = document.getElementById("quiz-questions");
 var quizOptions = document.getElementById("quiz-options");
 var timerEl = document.getElementById("countdown");
 
-//timer
+
 //timer needs to be decrements count --
  var score = 75;
  var timeleft = 0;
 
-// function incorrect() {
-//     timeLeft -= 10; 
-//     next();
-// }
-
-
-//once user hits start
-//goes through loop of questions
-function questionsArr() {
-   for (var i = 0; i < questionsArr.length; i++){
-
-        //1. Create an element.
-        var button = document.createElement("button");
-        //2.add content
-        button.textContent = availableQuestions[i];
-        button.setAttribute("data-value", availableQuestions[i]);
-        //3. Append to an existing elememt.
-        quizQuestions.append(button);
-
-    }
-}
-//user chooses from options
-//if answer is incorrect display wrong 
-//if answer is correct display correct
-//move to new questions once correct/wrong is displayed
-quizQuestions.addEventListener("click", function(event){  
-    if (event.target.matches("button")){
-     console.log("wrong answer");
- 
-}
-  });
 
 //once user clicks start
 // the intro disappears
 startButton.addEventListener("click", function() {
     challengeContainer.style.display = "none";
     renderQuizQuestions();
-    // var optionsToDisplay = statements[currentStatement].options;
-    // renderAnswerOptions(optionsToDisplay);
 });
