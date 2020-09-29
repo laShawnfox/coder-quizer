@@ -71,6 +71,13 @@ function renderQuestion()
     option_d.text(questionsArr[q_index]["options"]["optionD"]);
 }
 
+function renderResults()
+{
+    $(quizContainer).addClass('d-none');
+    $(resultsContainer).removeClass('d-none');
+}
+
+
 // WHEN I click the start button
 // the intro disappears
 startButton.addEventListener("click", function() {
