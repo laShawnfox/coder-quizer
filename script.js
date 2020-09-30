@@ -20,7 +20,7 @@ var resultsContainer = document.getElementById("results");
 var resultScreenContainer = document.getElementById("result-screen");
 var quizOptions = document.getElementById("quiz-options");
 var timerEl = document.getElementById("countdown");
-var anwserEl = document.getElementById("answer");
+var answerEl = document.getElementById("answer");
 
 //jquery place
 var q_text = $("#q_text");
@@ -91,12 +91,12 @@ $(document).ready(function() {
         renderQuestion();
     });
 
-    //make sure within scope from the error ..go back over jquery
-    $("#q_options button").click(function(e){
+    //make sure within scope from the error
+    $("#q_options button").click(function(event){
 
         var show_me = "Correct!";
 
-        if ( questionsArr[q_index]["correct"] != $(e.target).val() ) 
+        if ( questionsArr[q_index]["correct"] != $(event.target).val() ) 
         {
             time_left = (time_left - 10);
             show_me = "Wrong!";
@@ -108,7 +108,7 @@ $(document).ready(function() {
         renderQuestion();
     });
 
-    $("#reset").click(function(e) {
+    $("#reset").click(function(event) {
         time_left = 75;
         q_index = 0;
 
