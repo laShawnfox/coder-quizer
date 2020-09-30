@@ -1,8 +1,13 @@
-
-#countdown {
-    position: absolute;
+.times {
+  position: absolute;
     right: 10px;
-  }
+}
+
+.normal-box {
+  min-width: 450px;
+  padding: 30vh 34vw;
+  position: absolute;
+}
 
   #option_a {
     color: white;
@@ -17,7 +22,7 @@
     background-color: #452c70;
     border-radius: 4px;
     border: none;
-    padding: 4px 10px;
+    padding: 6px 10px;
   }
 
   #option_c {
@@ -25,7 +30,7 @@
     background-color: #452c70;
     border-radius: 4px;
     border: none;
-    padding: 4px 10px;
+    padding: 6px 10px;
   }
 
   #option_d {
@@ -33,14 +38,15 @@
     background-color: #452c70;
     border-radius: 4px;
     border: none;
-    padding: 4px 10px;
+    padding: 6px 10px;
   }
 
 
-  .myButton {
+  #start-quiz {
     color: white;
     background-color: #452c70;
     border-radius: 4px;
     border: none;
     padding: 4px 10px;
   }
+
