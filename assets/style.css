@@ -1,0 +1,46 @@
+
+#countdown {
+    position: absolute;
+    right: 10px;
+  }
+
+  #option_a {
+    color: white;
+    background-color: #452c70;
+    border-radius: 4px;
+    border: none;
+    padding: 4px 10px;
+  }
+
+  #option_b {
+    color: white;
+    background-color: #452c70;
+    border-radius: 4px;
+    border: none;
+    padding: 4px 10px;
+  }
+
+  #option_c {
+    color: white;
+    background-color: #452c70;
+    border-radius: 4px;
+    border: none;
+    padding: 4px 10px;
+  }
+
+  #option_d {
+    color: white;
+    background-color: #452c70;
+    border-radius: 4px;
+    border: none;
+    padding: 4px 10px;
+  }
+
+
+  .myButton {
+    color: white;
+    background-color: #452c70;
+    border-radius: 4px;
+    border: none;
+    padding: 4px 10px;
+  }

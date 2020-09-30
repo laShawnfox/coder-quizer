@@ -11,7 +11,7 @@
 // THEN I can save my initials and score
 
 
-$(document).ready(function() {
+// $(document).ready(function() {
 //target elements
 var challengeContainer = document.getElementById("challenge");
 var startButton = document.getElementById("start-quiz");
@@ -125,4 +125,4 @@ startButton.addEventListener("click", function() {
     challengeContainer.style.display = "none";
     renderQuizQuestions();
 });
-});
+// });
