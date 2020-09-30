@@ -17,6 +17,7 @@ var challengeContainer = document.getElementById("challenge");
 var startButton = document.getElementById("start-quiz");
 var quizContainer = document.getElementById("quiz-questions");
 var resultsContainer = document.getElementById("results");
+var resultScreenContainer = document.getElementById("result-screen");
 var quizOptions = document.getElementById("quiz-options");
 var timerEl = document.getElementById("countdown");
 var anwserEl = document.getElementById("answer");
@@ -74,6 +75,7 @@ function renderQuestion()
 function renderResults()
 {
     $(quizContainer).addClass('d-none');
+   // $(resultScreenContainer).removeClass('d-none');
     $(resultsContainer).removeClass('d-none');
 }
 

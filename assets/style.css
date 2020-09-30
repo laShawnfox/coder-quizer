@@ -9,7 +9,13 @@
   position: absolute;
 }
 
-  #option_a {
+.highscores {
+  background-color: #efe7fa;
+  margin-bottom: 20px;
+  border: none;
+}
+
+#option_a {
     color: white;
     background-color: #452c70;
     border-radius: 4px;
@@ -17,7 +23,7 @@
     padding: 4px 10px;
   }
 
-  #option_b {
+#option_b {
     color: white;
     background-color: #452c70;
     border-radius: 4px;
@@ -25,7 +31,7 @@
     padding: 6px 10px;
   }
 
-  #option_c {
+#option_c {
     color: white;
     background-color: #452c70;
     border-radius: 4px;
@@ -33,7 +39,7 @@
     padding: 6px 10px;
   }
 
-  #option_d {
+#option_d {
     color: white;
     background-color: #452c70;
     border-radius: 4px;
@@ -41,8 +47,7 @@
     padding: 6px 10px;
   }
 
-
-  #start-quiz {
+#start-quiz {
     color: white;
     background-color: #452c70;
     border-radius: 4px;
@@ -50,7 +55,11 @@
     padding: 4px 10px;
   }
 
-  button {
+  input {
+    margin-right: 10px;
+  } 
+
+button {
     color: white;
     background-color: #452c70;
     border-radius: 4px;
