@@ -22,6 +22,8 @@ var quizOptions = document.getElementById("quiz-options");
 var timerEl = document.getElementById("countdown");
 var answerEl = document.getElementById("answer");
 var userName = document.getElementById("user-name");
+var recentScore = localStorage.getItem("recent-score");
+var highScores =JSON.parse(localStorage.getItem("highscores")) || [];
 
 //jquery place
 var q_text = $("#q_text");
@@ -73,6 +75,7 @@ function renderQuestion()
     option_d.text(questionsArr[q_index]["options"]["optionD"]);
 }
 
+
 function renderResults()
 {
     $(quizContainer).addClass('d-none')
@@ -115,7 +118,7 @@ $(document).ready(function() {
 
         $(quizContainer).removeClass('d-none');
         $(resultScreenContainer).addClass('d-none');
-        $(hsContainer).addClass('d-none');
+        $(hsContainer).addClass('none');
         initTimer();
         renderQuestion();
 
@@ -124,10 +127,26 @@ $(document).ready(function() {
     $("#score-submit").click(function(e){
         var user = $("#input-username").val();
         // $('#user_name').append($("<li></li>").text(user + "-"));
-      
+        var score = {
+            score: recentScore,
+            name: user_name.val
+        };
+        highScores.push(score);
+        highScores.sort(a, b) (function(){
+         b.score - a.score});
+
+         localStorage.setItem("highScores", JSON.stringify(highScores));
+
         $(resultScreenContainer).addClass('d-none');
         $(hsContainer).addClass('d-none');
     });
+      
+    var score = {
+        score: recentScore,
+        name: user_name.val
+    };
+
+
 
     // startButton.addEventListener("click", function() {
 
