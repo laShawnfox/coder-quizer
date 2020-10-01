@@ -5,3 +5,5 @@
   The score the user receives is the exact as the timer when the quiz comes to an end.
 
 
+# Usage
+  The user should be able to click through the questions and receive immediate feedback on their choices. Once done the user will be able to view their score and re-take the quiz if they choose to do so.
