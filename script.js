@@ -16,11 +16,12 @@
 var challengeContainer = document.getElementById("challenge");
 var startButton = document.getElementById("start-quiz");
 var quizContainer = document.getElementById("quiz-questions");
-var resultsContainer = document.getElementById("results");
+var hsContainer = document.getElementById("hswrapper");
 var resultScreenContainer = document.getElementById("result-screen");
 var quizOptions = document.getElementById("quiz-options");
 var timerEl = document.getElementById("countdown");
 var answerEl = document.getElementById("answer");
+var userName = document.getElementById("user-name");
 
 //jquery place
 var q_text = $("#q_text");
@@ -74,9 +75,9 @@ function renderQuestion()
 
 function renderResults()
 {
-    $(quizContainer).addClass('d-none');
-   // $(resultScreenContainer).removeClass('d-none');
-    $(resultsContainer).removeClass('d-none');
+    $(quizContainer).addClass('d-none')
+    $(resultScreenContainer).removeClass('d-none');
+    $(hsContainer).addClass('d-none');
 }
 
 //does document.ready go here or at beginning?
@@ -91,40 +92,47 @@ $(document).ready(function() {
         renderQuestion();
     });
 
-    //make sure within scope from the error
-    $("#q_options button").click(function(event){
+    // WHEN I answer a question incorrectly
+    $("#q_options button").click(function(e){
 
         var show_me = "Correct!";
-
-        if ( questionsArr[q_index]["correct"] != $(event.target).val() ) 
+    // THEN time is subtracted from the clock
+        if ( questionsArr[q_index]["correct"] != $(e.target).val() ) 
         {
             time_left = (time_left - 10);
             show_me = "Wrong!";
         } 
 
-        $(anwserEl).show().text(show_me).fadeOut(2000);
+        $(answerEl).show().text(show_me).fadeOut(2000);
 
         q_index++;
         renderQuestion();
     });
 
-    $("#reset").click(function(event) {
+    $("#reset").click(function(e) {
         time_left = 75;
         q_index = 0;
 
         $(quizContainer).removeClass('d-none');
-        $(resultsContainer).addClass('d-none');
+        $(resultScreenContainer).addClass('d-none');
+        $(hsContainer).addClass('d-none');
         initTimer();
         renderQuestion();
 
     });
+//.val () - Get the current value of the first element in the set of matched elements.
+    $("#score-submit").click(function(e){
+        var user = $("#input-username").val();
+        // $('#user_name').append($("<li></li>").text(user + "-"));
+      
+        $(resultScreenContainer).addClass('d-none');
+        $(hsContainer).addClass('d-none');
+    });
 
+    // startButton.addEventListener("click", function() {
+
+    //     challengeContainer.style.display = "none";
+    //     renderQuizQuestions();
+    // });
 });
 
-// WHEN I click the start button
-// the intro disappears
-startButton.addEventListener("click", function() {
-    challengeContainer.style.display = "none";
-    renderQuizQuestions();
-});
-// });
